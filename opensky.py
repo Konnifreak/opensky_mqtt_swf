@@ -10,7 +10,7 @@ class mqtt:
     mqtt_client_id = ""
 
     def __init__(self):
-        self.mqtt_server = "mqtt.kjasny.de"
+        self.mqtt_server = ""
         self.mqtt_client_id = "opensky_script"
         self.client
 
