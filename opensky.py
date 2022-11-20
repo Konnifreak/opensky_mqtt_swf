@@ -40,9 +40,13 @@ class opensky:
     def get_planes_area(self):
         plane_data_all = requests.get('https://opensky-network.org/api/states/all?lamin=6.899757&lomin=7.036228&lamax=50.928791&lomax=50.996472&time=' + self.get_timestamp(120), auth=self.auth).json()
         for planes in plane_data_all["states"]:
-            self.plane_data.append({"callsign": planes[1], "country": planes[2], "altitute": planes[13], "on_ground": planes[8],"timestamp": planes[4]})
+            self.plane_data.append({"icao24": planes[0],"callsign": planes[1], "country": planes[2], "altitute": planes[13], "on_ground": planes[8],"timestamp": planes[4]})
 
         return self.plane_data
+    
+    def get_airline(self,icao):
+        
+
 #----------------Functions-----------------
 
 def inital_env():
